@@ -87,7 +87,7 @@ async def checkout(sku: str = "SKU-1", quantity: int = 1) -> CheckoutResponse:
     if PATCHED:
         discount_rate = PRICING.get("discount_rate", 0.0)
     else:
-        discount_rate = PRICING.get("discount_rate", 0.0)
+        discount_rate = PRICING["discount_rate"]
     total = round(subtotal * (1 - discount_rate) * (1 + PRICING["tax_rate"]), 2)
     return CheckoutResponse(
         status="ok", sku=sku, quantity=quantity, subtotal=subtotal,
