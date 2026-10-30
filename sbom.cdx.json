@@ -1,0 +1,535 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:697ef371-5d85-4c13-95b4-85e3ec0f5440",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-30T19:11:35+00:00",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "Sentinel",
+          "version": "1.0.0"
+        }
+      ]
+    },
+    "component": {
+      "type": "application",
+      "name": "sujal-jangir-111/sentinel-target",
+      "bom-ref": "incident:inc-51626f69"
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/pyyaml@5.4",
+      "name": "pyyaml",
+      "version": "5.4",
+      "purl": "pkg:pypi/pyyaml@5.4"
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:pypi/urllib3@1.24.1",
+      "name": "urllib3",
+      "version": "1.24.1",
+      "purl": "pkg:pypi/urllib3@1.24.1"
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "id": "GHSA-2xpw-w6gg-jr37",
+      "source": {
+        "name": "OSV",
+        "url": "https://osv.dev/vulnerability/GHSA-2xpw-w6gg-jr37"
+      },
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "description": "urllib3 streaming API improperly handles highly compressed data",
+      "affects": [
+        {
+          "ref": "pkg:pypi/urllib3@1.24.1"
+        }
+      ],
+      "recommendation": "Upgrade urllib3 to 2.6.0 or later"
+    },
+    {
+      "id": "GHSA-38jv-5279-wg99",
+      "source": {
+        "name": "OSV",
+        "url": "https://osv.dev/vulnerability/GHSA-38jv-5279-wg99"
+      },
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "description": "Decompression-bomb safeguards bypassed when following HTTP redirects (streaming API)",
+      "affects": [
+        {
+          "ref": "pkg:pypi/urllib3@1.24.1"
+        }
+      ],
+      "recommendation": "Upgrade urllib3 to 2.6.3 or later"
+    },
+    {
+      "id": "GHSA-gm62-xv2j-4w53",
+      "source": {
+        "name": "OSV",
+        "url": "https://osv.dev/vulnerability/GHSA-gm62-xv2j-4w53"
+      },
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "description": "urllib3 allows an unbounded number of links in the decompression chain",
+      "affects": [
+        {
+          "ref": "pkg:pypi/urllib3@1.24.1"
+        }
+      ],
+      "recommendation": "Upgrade urllib3 to 2.6.0 or later"
+    },
+    {
+      "id": "GHSA-mh33-7rrq-662w",
+      "source": {
+        "name": "OSV",
+        "url": "https://osv.dev/vulnerability/GHSA-mh33-7rrq-662w"
+      },
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "description": "Improper Certificate Validation in urllib3",
+      "affects": [
+        {
+          "ref": "pkg:pypi/urllib3@1.24.1"
+        }
+      ],
+      "recommendation": "Upgrade urllib3 to 1.24.2 or later"
+    },
+    {
+      "id": "GHSA-qccp-gfcp-xxvc",
+      "source": {
+        "name": "OSV",
+        "url": "https://osv.dev/vulnerability/GHSA-qccp-gfcp-xxvc"
+      },
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "description": "urllib3: Sensitive headers forwarded across origins in proxied low-level redirects",
+      "affects": [
+        {
+          "ref": "pkg:pypi/urllib3@1.24.1"
+        }
+      ],
+      "recommendation": "Upgrade urllib3 to 2.7.0 or later"
+    },
+    {
+      "id": "GHSA-v845-jxx5-vc9f",
+      "source": {
+        "name": "OSV",
+        "url": "https://osv.dev/vulnerability/GHSA-v845-jxx5-vc9f"
+      },
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "description": "`Cookie` HTTP header isn't stripped on cross-origin redirects",
+      "affects": [
+        {
+          "ref": "pkg:pypi/urllib3@1.24.1"
+        }
+      ],
+      "recommendation": "Upgrade urllib3 to 1.26.17 or later"
+    },
+    {
+      "id": "GHSA-vxq7-64xx-v4gw",
+      "source": {
+        "name": "OSV",
+        "url": "https://osv.dev/vulnerability/GHSA-vxq7-64xx-v4gw"
+      },
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "description": "urllib3: HTTPResponse.stream()/read_chunked() buffers an unbounded chunk-size line into memory",
+      "affects": [
+        {
+          "ref": "pkg:pypi/urllib3@1.24.1"
+        }
+      ],
+      "recommendation": "Upgrade urllib3 to 2.8.0 or later"
+    },
+    {
+      "id": "PYSEC-2023-192",
+      "source": {
+        "name": "OSV",
+        "url": "https://osv.dev/vulnerability/PYSEC-2023-192"
+      },
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "description": "urllib3 is a user-friendly HTTP client library for Python. urllib3 doesn't treat the `Cookie` HTTP header special or provide any helpers for managing cookies over HTTP, that is the responsibility of the user. However, it is possible for a user to specify a `Cookie` header and unknowingly leak inform",
+      "affects": [
+        {
+          "ref": "pkg:pypi/urllib3@1.24.1"
+        }
+      ],
+      "recommendation": "Upgrade urllib3 to 1.26.17 or later"
+    },
+    {
+      "id": "PYSEC-2026-1996",
+      "source": {
+        "name": "OSV",
+        "url": "https://osv.dev/vulnerability/PYSEC-2026-1996"
+      },
+      "ratings": [
+        {
+          "severity": "high"
+        }
+      ],
+      "description": "Decompression-bomb safeguards bypassed when following HTTP redirects (streaming API)",
+      "affects": [
+        {
+          "ref": "pkg:pypi/urllib3@1.24.1"
+        }
+      ],
+      "recommendation": "Upgrade urllib3 to 2.6.3 or later"
+    },
+    {
+      "id": "GHSA-34jh-p97f-mpxf",
+      "source": {
+        "name": "OSV",
+        "url": "https://osv.dev/vulnerability/GHSA-34jh-p97f-mpxf"
+      },
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "description": "urllib3's Proxy-Authorization request header isn't stripped during cross-origin redirects",
+      "affects": [
+        {
+          "ref": "pkg:pypi/urllib3@1.24.1"
+        }
+      ],
+      "recommendation": "Upgrade urllib3 to 1.26.19 or later"
+    },
+    {
+      "id": "GHSA-g4mx-q9vg-27p4",
+      "source": {
+        "name": "OSV",
+        "url": "https://osv.dev/vulnerability/GHSA-g4mx-q9vg-27p4"
+      },
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "description": "urllib3's request body not stripped after redirect from 303 status changes request method to GET",
+      "affects": [
+        {
+          "ref": "pkg:pypi/urllib3@1.24.1"
+        }
+      ],
+      "recommendation": "Upgrade urllib3 to 1.26.18 or later"
+    },
+    {
+      "id": "GHSA-gwvm-45gx-3cf8",
+      "source": {
+        "name": "OSV",
+        "url": "https://osv.dev/vulnerability/GHSA-gwvm-45gx-3cf8"
+      },
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "description": "Authorization Header forwarded on redirect",
+      "affects": [
+        {
+          "ref": "pkg:pypi/urllib3@1.24.1"
+        }
+      ],
+      "recommendation": "Upgrade urllib3 to 1.24.2 or later"
+    },
+    {
+      "id": "GHSA-pq67-6m6q-mj2v",
+      "source": {
+        "name": "OSV",
+        "url": "https://osv.dev/vulnerability/GHSA-pq67-6m6q-mj2v"
+      },
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "description": "urllib3 redirects are not disabled when retries are disabled on PoolManager instantiation",
+      "affects": [
+        {
+          "ref": "pkg:pypi/urllib3@1.24.1"
+        }
+      ],
+      "recommendation": "Upgrade urllib3 to 2.5.0 or later"
+    },
+    {
+      "id": "GHSA-r64q-w8jr-g9qp",
+      "source": {
+        "name": "OSV",
+        "url": "https://osv.dev/vulnerability/GHSA-r64q-w8jr-g9qp"
+      },
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "description": "Improper Neutralization of CRLF Sequences in urllib3 library for Python",
+      "affects": [
+        {
+          "ref": "pkg:pypi/urllib3@1.24.1"
+        }
+      ],
+      "recommendation": "Upgrade urllib3 to 1.24.3 or later"
+    },
+    {
+      "id": "GHSA-wqvq-5m8c-6g24",
+      "source": {
+        "name": "OSV",
+        "url": "https://osv.dev/vulnerability/GHSA-wqvq-5m8c-6g24"
+      },
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "description": "CRLF injection in urllib3",
+      "affects": [
+        {
+          "ref": "pkg:pypi/urllib3@1.24.1"
+        }
+      ],
+      "recommendation": "Upgrade urllib3 to 1.25.9 or later"
+    },
+    {
+      "id": "PYSEC-2023-207",
+      "source": {
+        "name": "OSV",
+        "url": "https://osv.dev/vulnerability/PYSEC-2023-207"
+      },
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "description": "urllib3 before 1.24.2 does not remove the authorization HTTP header when following a cross-origin redirect (i.e., a redirect that differs in host, port, or scheme). This can allow for credentials in the authorization header to be exposed to unintended hosts or transmitted in cleartext. NOTE: this is",
+      "affects": [
+        {
+          "ref": "pkg:pypi/urllib3@1.24.1"
+        }
+      ],
+      "recommendation": "Upgrade urllib3 to 1.24.2 or later"
+    },
+    {
+      "id": "PYSEC-2023-212",
+      "source": {
+        "name": "OSV",
+        "url": "https://osv.dev/vulnerability/PYSEC-2023-212"
+      },
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "description": "urllib3 is a user-friendly HTTP client library for Python. urllib3 previously wouldn't remove the HTTP request body when an HTTP redirect response using status 301, 302, or 303 after the request had its method changed from one that could accept a request body (like `POST`) to `GET` as is required by",
+      "affects": [
+        {
+          "ref": "pkg:pypi/urllib3@1.24.1"
+        }
+      ],
+      "recommendation": "Upgrade urllib3 to 1.26.18 or later"
+    },
+    {
+      "id": "PYSEC-2026-141",
+      "source": {
+        "name": "OSV",
+        "url": "https://osv.dev/vulnerability/PYSEC-2026-141"
+      },
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "description": "urllib3 is an HTTP client library for Python. From 1.23 to before 2.7.0, cross-origin redirects followed from the low-level API via ProxyManager.connection_from_url().urlopen(..., assert_same_host=False) still forward these sensitive headers. This vulnerability is fixed in 2.7.0.",
+      "affects": [
+        {
+          "ref": "pkg:pypi/urllib3@1.24.1"
+        }
+      ],
+      "recommendation": "Upgrade urllib3 to 2.7.0 or later"
+    },
+    {
+      "id": "PYSEC-2026-1995",
+      "source": {
+        "name": "OSV",
+        "url": "https://osv.dev/vulnerability/PYSEC-2026-1995"
+      },
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "description": "urllib3's Proxy-Authorization request header isn't stripped during cross-origin redirects",
+      "affects": [
+        {
+          "ref": "pkg:pypi/urllib3@1.24.1"
+        }
+      ],
+      "recommendation": "Upgrade urllib3 to 1.26.19 or later"
+    },
+    {
+      "id": "PYSEC-2026-1999",
+      "source": {
+        "name": "OSV",
+        "url": "https://osv.dev/vulnerability/PYSEC-2026-1999"
+      },
+      "ratings": [
+        {
+          "severity": "medium"
+        }
+      ],
+      "description": "urllib3 redirects are not disabled when retries are disabled on PoolManager instantiation",
+      "affects": [
+        {
+          "ref": "pkg:pypi/urllib3@1.24.1"
+        }
+      ],
+      "recommendation": "Upgrade urllib3 to 2.5.0 or later"
+    },
+    {
+      "id": "PYSEC-2019-132",
+      "source": {
+        "name": "OSV",
+        "url": "https://osv.dev/vulnerability/PYSEC-2019-132"
+      },
+      "ratings": [
+        {
+          "severity": "unknown"
+        }
+      ],
+      "description": "In the urllib3 library through 1.24.1 for Python, CRLF injection is possible if the attacker controls the request parameter.",
+      "affects": [
+        {
+          "ref": "pkg:pypi/urllib3@1.24.1"
+        }
+      ],
+      "recommendation": "Upgrade urllib3 to 1.24.3 or later"
+    },
+    {
+      "id": "PYSEC-2019-133",
+      "source": {
+        "name": "OSV",
+        "url": "https://osv.dev/vulnerability/PYSEC-2019-133"
+      },
+      "ratings": [
+        {
+          "severity": "unknown"
+        }
+      ],
+      "description": "The urllib3 library before 1.24.2 for Python mishandles certain cases where the desired set of CA certificates is different from the OS store of CA certificates, which results in SSL connections succeeding in situations where a verification failure is the correct outcome. This is related to use of t",
+      "affects": [
+        {
+          "ref": "pkg:pypi/urllib3@1.24.1"
+        }
+      ],
+      "recommendation": "Upgrade urllib3 to 1.24.2 or later"
+    },
+    {
+      "id": "PYSEC-2020-148",
+      "source": {
+        "name": "OSV",
+        "url": "https://osv.dev/vulnerability/PYSEC-2020-148"
+      },
+      "ratings": [
+        {
+          "severity": "unknown"
+        }
+      ],
+      "description": "urllib3 before 1.25.9 allows CRLF injection if the attacker controls the HTTP request method, as demonstrated by inserting CR and LF control characters in the first argument of putrequest(). NOTE: this is similar to CVE-2020-26116.",
+      "affects": [
+        {
+          "ref": "pkg:pypi/urllib3@1.24.1"
+        }
+      ],
+      "recommendation": "Upgrade urllib3 to 1.25.9 or later"
+    },
+    {
+      "id": "PYSEC-2026-1994",
+      "source": {
+        "name": "OSV",
+        "url": "https://osv.dev/vulnerability/PYSEC-2026-1994"
+      },
+      "ratings": [
+        {
+          "severity": "unknown"
+        }
+      ],
+      "description": "urllib3 streaming API improperly handles highly compressed data",
+      "affects": [
+        {
+          "ref": "pkg:pypi/urllib3@1.24.1"
+        }
+      ],
+      "recommendation": "Upgrade urllib3 to 2.6.0 or later"
+    },
+    {
+      "id": "PYSEC-2026-1998",
+      "source": {
+        "name": "OSV",
+        "url": "https://osv.dev/vulnerability/PYSEC-2026-1998"
+      },
+      "ratings": [
+        {
+          "severity": "unknown"
+        }
+      ],
+      "description": "urllib3 allows an unbounded number of links in the decompression chain",
+      "affects": [
+        {
+          "ref": "pkg:pypi/urllib3@1.24.1"
+        }
+      ],
+      "recommendation": "Upgrade urllib3 to 2.6.0 or later"
+    },
+    {
+      "id": "PYSEC-2026-4177",
+      "source": {
+        "name": "OSV",
+        "url": "https://osv.dev/vulnerability/PYSEC-2026-4177"
+      },
+      "ratings": [
+        {
+          "severity": "unknown"
+        }
+      ],
+      "description": "urllib3: HTTPResponse.stream()/read_chunked() buffers an unbounded chunk-size line into memory",
+      "affects": [
+        {
+          "ref": "pkg:pypi/urllib3@1.24.1"
+        }
+      ],
+      "recommendation": "Upgrade urllib3 to 2.8.0 or later"
+    }
+  ]
+}
