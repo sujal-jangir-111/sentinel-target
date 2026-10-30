@@ -1,10 +1,10 @@
 {
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
-  "serialNumber": "urn:uuid:697ef371-5d85-4c13-95b4-85e3ec0f5440",
+  "serialNumber": "urn:uuid:47d68258-1479-4baf-896a-96295f57dc2a",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-10-30T19:11:35+00:00",
+    "timestamp": "2026-10-30T19:19:15+00:00",
     "tools": {
       "components": [
         {
@@ -17,7 +17,7 @@
     "component": {
       "type": "application",
       "name": "sujal-jangir-111/sentinel-target",
-      "bom-ref": "incident:inc-51626f69"
+      "bom-ref": "incident:inc-d5faec4b"
     }
   },
   "components": [
