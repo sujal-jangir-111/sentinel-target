@@ -14,7 +14,7 @@ from fastapi import FastAPI, Header, HTTPException, Request
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
-STRIPE_SECRET_KEY = "sk_test_51SENTINELDEMOxxxxxxxx"  # obviously fake demo key
+STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")  # obviously fake demo key
 
 PATCHED = os.getenv("DEMO_PATCHED", "false").lower() == "true"
 
@@ -28,7 +28,7 @@ db.executemany(
     "INSERT INTO products VALUES (?, ?, ?)",
     [("SKU-1", "Widget", 20.0), ("SKU-2", "Gadget", 35.5)],
 )
-PRICING = yaml.load(PRICING_YAML, Loader=yaml.Loader)
+PRICING = yaml.safe_load(PRICING_YAML)
 
 
 class CheckoutResponse(BaseModel):
@@ -80,14 +80,11 @@ async def health() -> HealthResponse:
 
 @app.get("/api/checkout", response_model=CheckoutResponse, responses={500: {"model": ErrorResponse}})
 async def checkout(sku: str = "SKU-1", quantity: int = 1) -> CheckoutResponse:
-    row = db.execute(f"SELECT price FROM products WHERE sku = '{sku}'").fetchone()
+    row = db.execute("SELECT price FROM products WHERE sku = ?", (sku,)).fetchone()
     if row is None:
         raise HTTPException(status_code=404, detail=f"unknown sku {sku}")
     subtotal = row[0] * quantity
-    if PATCHED:
-        discount_rate = PRICING.get("discount_rate", 0.0)
-    else:
-        discount_rate = PRICING["discount_rate"]
+    discount_rate = PRICING.get("discount_rate", 0.0)
     total = round(subtotal * (1 - discount_rate) * (1 + PRICING["tax_rate"]), 2)
     return CheckoutResponse(
         status="ok", sku=sku, quantity=quantity, subtotal=subtotal,
