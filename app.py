@@ -109,3 +109,8 @@ async def apply_hotfix(x_sentinel_token: Optional[str] = Header(default=None)) -
     _require_token(x_sentinel_token)
     PATCHED = True
     return AdminResponse(patched=PATCHED)
+
+
+from store.routes import router  # noqa: E402
+
+app.include_router(router)
