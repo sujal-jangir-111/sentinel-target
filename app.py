@@ -14,7 +14,7 @@ from fastapi import FastAPI, Header, HTTPException, Request
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
-STRIPE_SECRET_KEY = "sk_test_51SENTINELDEMOxxxxxxxx"  # obviously fake demo key
+STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")  # obviously fake demo key
 
 PATCHED = os.getenv("DEMO_PATCHED", "false").lower() == "true"
 
@@ -28,7 +28,7 @@ db.executemany(
     "INSERT INTO products VALUES (?, ?, ?)",
     [("SKU-1", "Widget", 20.0), ("SKU-2", "Gadget", 35.5)],
 )
-PRICING = yaml.load(PRICING_YAML, Loader=yaml.Loader)
+PRICING = yaml.safe_load(PRICING_YAML)
 
 
 class CheckoutResponse(BaseModel):
@@ -109,8 +109,3 @@ async def apply_hotfix(x_sentinel_token: Optional[str] = Header(default=None)) -
     _require_token(x_sentinel_token)
     PATCHED = True
     return AdminResponse(patched=PATCHED)
-
-
-from store.routes import router  # noqa: E402
-
-app.include_router(router)
